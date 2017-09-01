@@ -1,0 +1,18 @@
+<div class="container" id="guestBook-Component">
+    <h3>Read Guest Book Message</h3>
+    <ul class="messages">
+        <span>Messages: </span>
+        <li *ngFor="let readBook of readBookData | ObjectArray" > {{readBook.value.message}} </li>
+    </ul>
+    <h3>Write Guest Book Message</h3>
+    <form  [formGroup]="messageForm" >
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="phone">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="message">
+        </div>
+        <button type="submit" class="btn btn-success" (click)="messageSubmit()">Submit Message</button>
+    </form>
+    <div class="alert alert-danger" [hidden]="!errorMsgBook">{{errorMsgBook}} </div>
+</div>

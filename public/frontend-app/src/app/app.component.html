@@ -1,0 +1,22 @@
+<div class="container-fuild" id="main-app">
+    <nav class="navbar">
+        <ul class="nav nav-pills justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]=" ['./logout'] " routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+                    Logout
+            </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]=" ['./readBook'] " routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+                    Guest Book
+            </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]=" ['./states'] " routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+                    States
+            </a>
+            </li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
+</div>

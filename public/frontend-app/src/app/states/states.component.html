@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row" *ngIf="allStatesData else singleState">
+         <h3>All States: </h3>
+        <table class="table table-bordered" >
+            <tr>
+                <th>Name</th>
+                <th>Capital</th>
+                <th>Abbreviation</th>
+            </tr>
+            <tr *ngFor="let  state of allStatesData | ObjectArray">
+                <td>
+                    <a [routerLink]="['/states', state?.value.abbreviation]">
+                        {{state?.value.name}}
+                </a>
+            </td>
+            <td>
+                {{state?.value.capital}}
+            </td>
+            <td>
+                {{state?.value.abbreviation}}
+            </td>
+        </tr>
+    </table>
+</div>
+<ng-template #singleState>
+    <div class="row">
+        <h3>{{singleStatesData?.name}} </h3>
+        <table class="table table-bordered" >
+            <tr>
+                <th>Name</th>
+                <th>Capital</th>
+                <!--<th>Most Populous City</th>-->
+                <th>Abbreviation</th>
+                <th>Population</th>
+                <th>Area</th>
+                <th>Time Zone 1</th>
+                <th>Time Zone 2</th>
+            </tr>
+            <tr>
+                <td>
+                    {{singleStatesData?.name}}
+                </td>
+                <td>
+                    {{singleStatesData?.capital}}
+                </td>
+                <!--                <td>
+                                    {{singleStatesData?.most-populous-city}}
+                                </td>-->
+                <td>
+                    {{singleStatesData?.abbreviation}}
+                </td>
+                <td>
+                    {{singleStatesData?.population}}
+                </td>
+                <td>
+                    {{singleStatesData?.square-miles}}
+                </td>
+                <td>
+                    {{singleStatesData?.time-zone-1}}
+                </td>
+                <td>
+                    {{singleStatesData?.time-zone-2}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</ng-template>
+<h3>
+    List of All Abbreviations
+</h3>
+<table class="table table-bordered" >
+    <tr>
+        <th>Abbreviation</th>
+    </tr>
+    <tr *ngFor="let  abbreviations of allAbbreviationsData | ObjectArray">
+        <td>
+            {{abbreviations?.value}}
+        </td>
+    </tr>
+</table>
+</div>

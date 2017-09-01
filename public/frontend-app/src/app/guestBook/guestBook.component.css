@@ -1,0 +1,9 @@
+#guestBook-Component{
+    padding: 60px 20px;
+}
+#guestBook-Component h3{
+    margin: 20px 0px;
+}
+.messages{
+    margin-bottom: 60px;
+}
